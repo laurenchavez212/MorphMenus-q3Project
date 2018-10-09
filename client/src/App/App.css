@@ -1,4 +1,8 @@
 
+.homeContainer {
+  background-color:rgb(233, 236, 239, .7);
+}
+
 .logo {
   height: 5vh;
 }
@@ -32,5 +36,14 @@
 }
 
 .whyBanner {
-  height: 
+  padding-top: 10px;
+  height: 29vh;
+  background-color:rgb(224, 224, 224, .7);
+  padding-left: 5%;
+}
+
+.whyBanner h6, h2 {
+  border-radius: 5px;
+  background-color: whitesmoke;
+  padding: 3%;
 }
