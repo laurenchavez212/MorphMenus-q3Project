@@ -1,19 +1,36 @@
+
 .logo {
   height: 5vh;
 }
 
 .homeBanner {
-  height: 20vh;
+  height: 30vh;
   background-image: url('../images/hanging-lights.jpg');
   background-size: 100% 100%;
   text-align: center;
+  padding-top: 5%;
 }
 .homeBanner h1 {
   color: white;
-  background-color: rgb(233, 236, 239, .5);
+  background-color: rgb(233, 236, 239, .7);
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 5px;
 }
 
 
 .homeBanner button {
   border-radius: 3px;
+  background-color: grey;
+  color: whitesmoke;
+  opacity: .9;
+}
+
+.homeBanner button:hover {
+  cursor: pointer;
+  box-shadow: 0 3px 7px black;
+}
+
+.whyBanner {
+  height: 
 }
