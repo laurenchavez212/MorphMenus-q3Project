@@ -1,49 +1,102 @@
-
 .homeContainer {
-  background-color:rgb(233, 236, 239, .7);
+  background-color: rgb(224, 224, 224, 0.8);
 }
 
 .logo {
-  height: 5vh;
+  height: 5.3vh;
 }
 
 .homeBanner {
   height: 30vh;
-  background-image: url('../images/hanging-lights.jpg');
+  background-image: url("../images/hanging-lights.jpg");
   background-size: 100% 100%;
   text-align: center;
   padding-top: 5%;
 }
+
 .homeBanner h1 {
   color: white;
-  background-color: rgb(233, 236, 239, .7);
-  width: 90%;
-  margin-left: 5%;
-  border-radius: 5px;
+  text-shadow: 3px 3px 10px grey;
 }
-
 
 .homeBanner button {
   border-radius: 3px;
   background-color: grey;
   color: whitesmoke;
-  opacity: .9;
+  opacity: 0.9;
+  width: 17vw;
+  box-shadow: 0 3px 4px white;
+  text-shadow: 0.5px 0.5px 1px white;
 }
 
 .homeBanner button:hover {
   cursor: pointer;
-  box-shadow: 0 3px 7px black;
+  box-shadow: 0 3px 7px white;
+  text-shadow: 1px 1px 3px white;
 }
 
 .whyBanner {
   padding-top: 10px;
-  height: 29vh;
-  background-color:rgb(224, 224, 224, .7);
   padding-left: 5%;
 }
 
-.whyBanner h6, h2 {
+.whyBanner h6 {
   border-radius: 5px;
   background-color: whitesmoke;
   padding: 3%;
+  box-shadow: 0 2px 5px white;
+}
+
+.whyBanner h2 {
+  border-radius: 5px;
+  background-color: white;
+  padding: 3%;
+  color: rgb(64, 64, 64);
+  text-shadow: 0.5px 1px 3px grey;
+}
+
+.screenShots {
+  text-align: center;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(253, 253, 255, 0.7),
+    rgb(209, 209, 209)
+  );
+  border-radius: 4px;
+}
+.screenShots img {
+  width: 26vw;
+  margin: 10px;
+}
+
+.whyList h1 {
+  padding-top: 1%;
+  text-align: center;
+  letter-spacing: 10px;
+  text-decoration: underline;
+  text-shadow: 1px 1px 3px grey;
+}
+
+.whyList {
+  position: relative;
+  padding: 3%;
+}
+
+.whyList h1 {
+  color: white;
+  text-shadow: 3px 3px 10px grey;
+}
+
+.whyList::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("https://images.pexels.com/photos/1268558/pexels-photo-1268558.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-size: 100% 100%;
+  border-radius: 5px;
+  margin: 1%;
 }

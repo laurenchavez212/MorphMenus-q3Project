@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Home from '../components/Homepage';
-import List from '../components/List';
+import Home from '../components/homepage/Homepage';
+import WelcomeAdmin from '../components/admin/welcomeAdmin';
 
 class App extends Component {
   render() {
     const App = () => <div className="App">
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/list" component={List} />
+          <Route path="/admin" component={WelcomeAdmin} />
         </Switch>
       </div>;
     return (
