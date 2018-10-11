@@ -1,18 +1,28 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "../../styles/index.css";
 import TopNav from "../homepage/topNav";
 import BottomNav from "../homepage/bottomNav";
 import { Form, Input, Button } from "reactstrap";
+// import { Link } from "react-router-dom";
+import MenuButton from './MenuButton';
+// import { bindActionCreators } from "redux";
+import { fetchAccount } from "../../redux/actions/accountActions";
+// import accounts from "../../redux/reducers/accounts";
 
-class Home extends Component {
+
+class Welcome extends Component {
+
+  componentDidMount() {
+    this.props.fetchAccount()
+  }
   render() {
-    return (
-      <div className="adminContainer">
+    console.log(this.props)
+    return <div className="adminContainer">
         <TopNav />
         <div>
-                <h1>Welcome Oreganos Pizza Bistro!</h1>
-                <Button>View your menu!</Button>
+        <h1>Welcome {this.props.account_name}</h1>
+          <Button>View your menu!</Button>
           <Form>
             <Input placeholder="Add a new type of Menu!" />
           </Form>
@@ -20,16 +30,30 @@ class Home extends Component {
 
         <div>
           <h3>Edit A Menu</h3>
-          <Button>
-            <Link to={""}>Dinner</Link>
-          </Button>
-          <Button>
-            <Link to={""}>Drinks</Link>
-          </Button>
+
+          {/* PULL INFO FROM ROUTES FOR MENU BUTTONS! */}
+          {/* {listOfMenus} */}
         </div>
         <BottomNav />
-      </div>
-    );
-  }
+      </div>;
 }
-export default Home;
+}
+  
+// const mapDispatchToProps = dispatch =>
+//   bindActionCreators(
+//     {
+//       fetchAccount
+//     },
+//     dispatch
+//   );
+
+
+const mapStateToProps = state => {
+  console.log(state);
+  return ({
+    account: state.account
+  })
+};
+
+
+export default connect(mapStateToProps, { fetchAccount })(Welcome);

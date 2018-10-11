@@ -1,12 +1,10 @@
-// import { createStore, combineReducers, applyMiddleware } from "redux";
-// import thunk from "redux-thunk";
-// import logger from "redux-logger";
-// import menusReducer from './reducers/m'
+import { createStore, applyMiddleware } from "redux";
+import rootReducer from "./reducers";
+import thunk from "redux-thunk";
+import logger from "redux-logger";
 
-// let rootReducer = combineReducers({
-//     cameras: camerasReducer
-// });
+let middleware = [thunk, logger];
 
-// let middleware = [thunk, logger];
+const store = createStore(rootReducer, applyMiddleware(...middleware));
 
-// export default () => createStore(rootReducer, applyMiddleware(...middleware));
+export default store;

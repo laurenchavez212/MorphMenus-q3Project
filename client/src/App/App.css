@@ -75,20 +75,20 @@
   padding-top: 1%;
   text-align: center;
   letter-spacing: 10px;
-  text-decoration: underline;
   text-shadow: 1px 1px 3px grey;
 }
 
 .whyList {
   position: relative;
   padding: 3%;
+  background-color:grey;
 }
 
 .whyList h1 {
   color: white;
   text-shadow: 3px 3px 10px grey;
 }
-
+/* 
 .whyList::before {
   content: "";
   position: absolute;
@@ -101,7 +101,7 @@
   background-size: 100% 100%;
   border-radius: 5px;
   margin: 1%;
-}
+} */
 
 /* Homepage ends */
 

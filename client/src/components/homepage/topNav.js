@@ -50,7 +50,7 @@ export default class TopNav extends React.Component {
             </Form>
           </ModalBody>
         <ModalFooter>
-          <Link to={'./admin'}>
+          <Link to={'./welcome'}>
             <Button color="primary" onClick={this.toggle}>
               Login
             </Button>{" "}
