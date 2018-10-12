@@ -17,7 +17,7 @@ class Menu extends Component {
             </div>
             <Container>
               <Row className="categoryName">
-                <h3>Tastes</h3>
+                <h2>Tastes</h2>
                   </Row>   
                   <Row>
                       <MenuList />

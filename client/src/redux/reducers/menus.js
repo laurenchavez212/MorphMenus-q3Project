@@ -2,7 +2,8 @@ import {
   FETCH_MENUS_SUCCESS,
   POST_ITEMS_SUCCESS,
   POST_ITEMS_FAILED,
-  DELETE_ITEM
+  DELETE_ITEM,
+  EDIT_ITEM,
   // CREATE_MENU_SUCCESS,
   // CREATE_MENU_FAILED,
   // UPDATE_MENU_SUCCESS,
@@ -22,6 +23,8 @@ export default (state = initialState, action) => {
       return state;
     case DELETE_ITEM:
       return state.filter(item => item.id !== action.payload);
+      case EDIT_ITEM:
+            return state.map(item => item.id === action.payload.id ? action.paylod : item);
 
     // case CREATE_MENU_SUCCESS:
     //     return [...state, action.payload];

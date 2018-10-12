@@ -32,7 +32,7 @@ class Welcome extends Component {
         <TopNav />
         <div>
           <h1>
-            Oreganos Pizza Bistro!
+            Welcome Oreganos Pizza Bistro!
             <br />
           <img className="logo" src="http://morphmenus.s3.amazonaws.com/restaurants/logos/000/000/037/normal/Screen_Shot_2018-06-14_at_12.12.32_AM.png?1528960500" alt="logo" />
           </h1>

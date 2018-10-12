@@ -33,7 +33,7 @@ exports.seed = function(knex, Promise) {
           item_price: "9.89",
           item_description:
             "A very tasty Italian guacamole made with basil, garlic, fresh avocado, red onions, and a little tomato all surrounded with our pizza crust chips. It’s Grrreat!! Sorry, that’s a different Tony. Handmade to order!",
-          options: "Gutlen Free pizza crust(+$1.00)",
+          options: "Gulten Free pizza crust(+$1.00)",
           allergies: "Gluten, Dairy, Soy",
           image_file:
             "http://morphmenus.s3.amazonaws.com/items/images/000/000/041/normal/Guac.jpg?1539108249"

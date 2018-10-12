@@ -46,7 +46,7 @@ export default class TopNav extends React.Component {
           <ModalBody>
             <Form>
               <Input placeholder="Email" />
-              <Input placeholder="Password" />
+              <Input type="password" placeholder="Password" />
             </Form>
           </ModalBody>
         <ModalFooter>

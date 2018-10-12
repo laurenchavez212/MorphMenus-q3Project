@@ -21,7 +21,7 @@ class MenuList extends Component {
 
 render() {
     
-    return <div className="container">
+    return <div className="ItemsContainer">
         <Row>
             {this.state.items.map(item => (
             <MenuItem key={item.id} item={item} />

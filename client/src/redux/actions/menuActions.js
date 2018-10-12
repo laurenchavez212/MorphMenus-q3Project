@@ -7,6 +7,7 @@ export const POST_ITEMS_SUCCESS = "POST_ITEMS_SUCCESS";
 export const POST_ITEMS_FAILED = "POST_ITEMS_FAILED";
 
 export const DELETE_ITEM = "DELETE_ITEM";
+export const EDIT_ITEM = "EDIT_ITEM";
 
 export const fetchMenu = () => {
     return dispatch => {
@@ -59,40 +60,12 @@ export const deleteItem = (id) => {
     }
 }
 
-// export const addMenu = menu => {
+// export const editItem = (item) => {
 //     return dispatch => {
-//         axios.post('http://localhost:8080/MENUS HERE', menu)
-//             .then(result => dispatch({
-//                 type: CREATE_MENU_SUCCESS,
-//                 payload: result.data
-//             }))
-//             .catch(err => dispatch({
-//                 type: CREATE_MENU_FAILED,
-//                 payload: err
-//             }))
+//         axios.patch("http://localhost:8000/menu/1", item)
+//         .then(response => dispatch ({
+//             type: EDIT_ITEM,
+//             payload: response.data
+//         }))
 //     }
-// };
-
-// export const removeMenu = id => {
-//     return dispatch => {
-//         dispatch({
-//             type: REMOVE_MENU,
-//             payload: id
-//         });
-//     };
-// };
-
-// export const updateMenu = menu => {
-//     return dispatch => {
-
-//         axios.patch(`http://localhost:8080/MENUS HERE/${MENU_ID.id}`, menu)
-//             .then(result => dispatch({
-//                 type: UPDATE_MENU_SUCCESS,
-//                 payload: result.data
-//             }))
-//             .catch(err => dispatch({
-//                 type: UPDATE_MENU_FAILED,
-//                 payload: err
-//             }))
-//     }
-// };
+// }
