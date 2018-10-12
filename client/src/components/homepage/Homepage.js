@@ -12,7 +12,7 @@ class Home extends Component {
         <TopNav />
         <div className="homeBanner">
           <h1>TURN YOUR MENU INTO A POWERFUL MARKETING TOOL</h1>
-          <Link to={""}>
+          <Link to={"/menu"}>
             <button variant="raised">SAMPLE MENU</button>
           </Link>
         </div>
@@ -114,7 +114,13 @@ class Home extends Component {
                 </CardTitle>
               </Card>
             </Col>
-          </Row>
+        </Row>
+        <br/>
+        <h1 class="lead">
+          <a class="btn-info btn-lg" href="mailto:MorphMenus@gmail.com">
+            Email Us To Learn More
+              </a>
+        </h1>
       </div>
       
       <BottomNav />

@@ -4,7 +4,7 @@
   background-color: rgb(224, 224, 224, 0.8);
 }
 
-.logo {
+.morph {
   height: 5.3vh;
 }
 
@@ -114,5 +114,48 @@
 
 .adminContainer Button {
   margin: .2%;
-  border-radius: 2px;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.logo {
+  height: 23vh;
+  width: 32vw;
+}
+
+.adminContainer h3, h1 {
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 4px 4px 10px black;
+}
+
+/* Menu page */
+
+.menuContainer h3 {
+letter-spacing: 1px;
+  color: white;
+  text-shadow: 2px 2px 10px whites;
+}
+
+.menuContainer img {
+  height: 20vh;
+  width: 20vw;
+}
+
+.categoryName {
+  background-color: grey;
+}
+
+.menuHead {
+  text-align: center;
+}
+
+.Items {
+  text-align: center;
+}
+
+.Items p {
+  color: grey;
 }

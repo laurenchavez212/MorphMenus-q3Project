@@ -2,34 +2,18 @@ const knex = require("../db/knex.js");
 
 module.exports = {
 
-    // adminPG: (req, res) => {
-    //      knex('acount')
-    //         .then((response) => {
-    //             res.json(response)
-    //         })
-    // },
-
-    // adminPG: (req, res) => {
-    //    knex('menu')
-    //        .then((menuRes)=>{
-    //        knex('account')
-    //            .then((accountRes)=>{
-    //                res.json({ menuRes, accountRes})
-    //        })
-    //    })
-    // },
-
     adminPG: (req, res) => {
         knex('menu')
+            .select('*', 'menu.id as menu_id')
             .innerJoin('account', 'menu.account_id', 'account.id')
             .where('account_id', req.params.id)
             .then((result) => {
+                console.log("result",result)
                 let { id, menu_name, ...user } = result[0]
-
                 let newObj = {
                     user,
                     menus: result.map(menu => ({
-                        id: menu.id,
+                        id: menu.menu_id,
                         menu_name: menu.menu_name
                     }))
                 }
@@ -39,31 +23,74 @@ module.exports = {
         })
     },
 
-    // adminPG: (req, res) => {
-    //     knex('account')
-    //         .then((accountRes) => {
-    //             res.json(accountRes[0])
-    //     })
-    // },
+    menu: (req, res) => {
+        knex('item')
+            .then((result) => {
+            res.json(result)
+        })
+    },
 
+    postItems: function (req, res) {
+          knex('item').insert({
+              item_name: req.body.item_name,
+              category_id: req.body.category_id,
+              item_price: req.body.item_price,
+              item_description: req.body.item_description,
+              options: req.body.options,
+              allergies: req.body.allergies,
+              image_file: req.body.image_file
+        }).then((result) => {
+            res.json(req.body)
+        })
+    },
 
-
-
-    all: (req, res) => {
-        knex('menu')
-            .then((menuRes) => {
-                knex('account')
-                    .then((accountRes) => {
-                        knex('category')
-                            .then((categoryRes) => {
-                            knex('item')
-                                .then((itemRes) => {
-                                    res.json({ menuRes, accountRes, categoryRes, itemRes })
-                                })
-                        })
-                    })
+    deleteItem: (req, res) => {
+        knex('item').where('id', req.params.id).delete()
+            .then((result) => {
+                res.json(result)
             })
     },
+
+    // menu: (req, res) => {
+    //     knex('menu')
+    //         .select('*', 'menu.id as menu_id')
+    //         .innerJoin('account', 'menu.account_id', 'account.id')
+    //         .innerJoin('category', 'category.menu_id', 'menu.id')
+    //         .where('account_id', req.params.id)
+    //         .then((result) => {
+    //             console.log("result", result)
+    //             let { id, menu_name, ...user } = result[0]
+    //             let newObj = {
+    //                 user,
+    //                 menus: result.map(menu => ({
+    //                     id: menu.menu_id,
+    //                     menu_name: menu.menu_name
+    //                 }))
+    //             }
+    //             let catObj = {
+    //                 user,
+    //                 category
+    //             }
+
+    //             res.json(newObj)
+    //         })
+    // },
+
+    // all: (req, res) => {
+    //     knex('menu')
+    //         .then((menuRes) => {
+    //             knex('account')
+    //                 .then((accountRes) => {
+    //                     knex('category')
+    //                         .then((categoryRes) => {
+    //                         knex('item')
+    //                             .then((itemRes) => {
+    //                                 res.json({ menuRes, accountRes, categoryRes, itemRes })
+    //                             })
+    //                     })
+    //                 })
+    //         })
+    // },
 
     // adminPG: (req, res) => {
     //     knex('menu')

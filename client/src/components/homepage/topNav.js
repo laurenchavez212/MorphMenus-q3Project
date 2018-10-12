@@ -35,7 +35,7 @@ export default class TopNav extends React.Component {
     return <div>
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">
-            <img className="logo" src="https://s3-us-west-1.amazonaws.com/morphmenuslogo/logo.png" alt="morph menus logo" />
+            <img className="morph" src="https://s3-us-west-1.amazonaws.com/morphmenuslogo/logo.png" alt="morph menus logo" />
           </NavbarBrand>
           <Nav className="ml-auto" navbar>
             <NavItem onClick={this.toggle}> Sign In</NavItem>
@@ -50,7 +50,7 @@ export default class TopNav extends React.Component {
             </Form>
           </ModalBody>
         <ModalFooter>
-          <Link to={'./welcome'}>
+          <Link to={'/welcome'}>
             <Button color="primary" onClick={this.toggle}>
               Login
             </Button>{" "}

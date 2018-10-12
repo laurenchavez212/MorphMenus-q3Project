@@ -8,6 +8,7 @@ import './App/App.css';
 
 import Welcome from './components/admin/welcomeAdmin'
 import Homepage from './components/homepage/Homepage'
+import Menu from './components/Menu'
 
 
 
@@ -18,6 +19,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/welcome" component={Welcome} />
         <Route exact path="/" component={Homepage} />
+        <Route path="/menu" component={Menu} />
       </Switch>
     </BrowserRouter>
   </Provider>

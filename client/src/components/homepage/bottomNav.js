@@ -1,12 +1,8 @@
 import React from "react";
 import {
-  Collapse,
   Navbar,
-  NavbarToggler,
-  NavbarBrand,
   Nav,
-  NavItem,
-  NavLink
+  NavItem
 } from "reactstrap";
 import "../../styles/index.css";
 
@@ -25,8 +21,7 @@ export default class BottomNav extends React.Component {
     });
   }
   render() {
-    return (
-      <div>
+    return <div>
         <Navbar color="light" light expand="md">
           <Nav className="ml-auto" navbar>
             <NavItem>
@@ -34,7 +29,6 @@ export default class BottomNav extends React.Component {
             </NavItem>
           </Nav>
         </Navbar>
-      </div>
-    );
+      </div>;
   }
 }
