@@ -5,7 +5,7 @@ import TopNav from "../homepage/topNav";
 import BottomNav from "../homepage/bottomNav";
 import { Form, Input, Button } from "reactstrap";
 import { postItems } from "../../redux/actions/menuActions";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 
 class Welcome extends Component {
@@ -23,7 +23,7 @@ class Welcome extends Component {
   addToItemsList = (e) => {
     alert("Yay! You posted a new item to your menu!")
     e.preventDefault();
-    return this.props.postItems(this.state)
+    this.props.postItems(this.state, this.props.history)
   }
   
   render() {
@@ -76,4 +76,4 @@ class Welcome extends Component {
 }
 
 
-export default connect(null, { postItems })(Welcome)
+export default withRouter(connect(null, { postItems })(Welcome))

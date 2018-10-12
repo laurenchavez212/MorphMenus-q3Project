@@ -208,7 +208,7 @@ exports.seed = function(knex, Promise) {
             "http://morphmenus.s3.amazonaws.com/items/images/000/000/100/normal/Oreganos2017-ClarkStPizza-2.jpg?1526202641"
         },
         {
-          item_name: "THE ORIGINAL PIZZA COOKIE®",
+          item_name: "Pizookie",
           category_id: 5,
           item_price: "4.99",
           item_description:

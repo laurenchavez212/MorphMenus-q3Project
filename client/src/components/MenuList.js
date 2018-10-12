@@ -6,32 +6,29 @@ import { connect } from "react-redux";
 
 
 class MenuList extends Component {
-    state = {
-        items: []
-    }
+
     componentDidMount() {
         this.props.fetchMenu();
     }
 
-    componentDidUpdate() {
-        if (this.props.items.length !== this.state.items.length) {
-            this.setState({ items: this.props.items });            
+    render() {
+        console.log('this.props in ml', this.props)
+        if (this.props.items) {
+            return <div className="ItemsContainer">
+                <Row>
+                    {this.props.items.map(item => (
+                        <MenuItem key={item.id} item={item} />
+                    ))}
+                </Row>
+            </div>;
+        } else {
+            return <div>Loading...</div>
         }
     }
-
-render() {
-    
-    return <div className="ItemsContainer">
-        <Row>
-            {this.state.items.map(item => (
-            <MenuItem key={item.id} item={item} />
-            ))}
-        </Row>
-      </div>;
-}
 }
 
 const mapStateToProps = state => {
+    console.log('state in mstp', state)
     return {
         items: state.menus
     };

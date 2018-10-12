@@ -46,10 +46,27 @@ module.exports = {
     },
 
     deleteItem: (req, res) => {
+        console.log(req.params.id)
         knex('item').where('id', req.params.id).delete()
             .then((result) => {
                 res.json(result)
             })
-    }
+    },
+
+    updateItem: (req, res) => {
+        knex('item').where('id', req.params.id).update({
+            item_name: req.body.item_name,
+            category_id: req.body.category_id,
+            item_price: req.body.item_price,
+            item_description: req.body.item_description,
+            options: req.body.options,
+            allergies: req.body.allergies,
+            image_file: req.body.image_file
+        }, '*')
+            .then((result) => {
+                res.json(result)
+            })
+    },
+
 
 }

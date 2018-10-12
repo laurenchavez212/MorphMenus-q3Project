@@ -28,15 +28,17 @@ export const fetchMenu = () => {
     };
 };
 
-export const postItems = (item) => {
+export const postItems = (item, history) => {
     return dispatch => {
         axios
           .post("http://localhost:8000/menu/1", item)
-          .then(response =>
-            dispatch({
-              type: POST_ITEMS_SUCCESS,
-              payload: response.data
-            })
+            .then(response => {
+                dispatch({
+                    type: POST_ITEMS_SUCCESS,
+                    payload: response.data
+                })
+                history.push("/menu/1")
+            }
           )
           .catch(err =>
             dispatch({
@@ -50,22 +52,28 @@ export const postItems = (item) => {
 export const deleteItem = (id) => {
     return dispatch => {
         axios
-          .delete(`http://localhost:8000/menu/${id}`)
-          .then(response =>
-            dispatch({
-              type: DELETE_ITEM,
-              payload: response.data
-            })
-          );
+            .delete(`http://localhost:8000/menu/${id}`)
+            .then(response => {
+                console.log(response.data)
+                dispatch({
+                    type: DELETE_ITEM,
+                    payload: id
+                })
+            }
+            );
     }
 }
 
-// export const editItem = (item) => {
-//     return dispatch => {
-//         axios.patch("http://localhost:8000/menu/1", item)
-//         .then(response => dispatch ({
-//             type: EDIT_ITEM,
-//             payload: response.data
-//         }))
-//     }
-// }
+export const editItem = (item) => {
+    return dispatch => {
+        axios.patch(`http://localhost:8000/menu/${item.id}`, item)
+            .then(response => {
+                console.log('response', response)
+                // console.log(item)
+                dispatch({
+                    type: EDIT_ITEM,
+                    payload: response.data[0]
+                })
+            })
+    }
+}
